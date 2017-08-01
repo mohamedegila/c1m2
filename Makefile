@@ -15,10 +15,10 @@
 # Use: make [TARGET] [PLATFORM-OVERRIDES]
 #
 # Build Targets:
-#      <Put a description of the supported targets here>
+#     
 #
 # Platform Overrides:
-#      <Put a description of the supported Overrides here
+#     Put a description of the supported Overrides here
 #
 #------------------------------------------------------------------------------
 include sources.mk
