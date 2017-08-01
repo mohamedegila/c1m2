@@ -61,14 +61,6 @@ endif
 # Compiler Flags and Defines
 
 OBJS = $(SOURCES:.c=.o)
-ASM = $(SOURCES:.c=.asm)
-I = $(SOURCES:.c=.i)
-%.asm : %.c
-	$(CC) -c $< $(CPPFLAGs) $(CFLAGS) -S -o $@
-
-%.i : %.c
-	$(CC) -c $< $(CPPFLAGs) $(CFLAGS) -E -o $@
-
 
 %.o : %.c
 	$(CC) -c $< $(CPPFLAGs) $(CFLAGS) -o $@
@@ -79,10 +71,6 @@ I = $(SOURCES:.c=.i)
 build: $(TARGET).out
 $(TARGET).out: $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -o $@
-
-.PHONY: compile-all
-compile-all:
-	$(CC) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -c $(SOURCES) 
 	
 
 .PHONY: clean
